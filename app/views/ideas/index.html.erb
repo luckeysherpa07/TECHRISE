@@ -1,10 +1,16 @@
+<%= simple_form_for Idea.new do |f| %>
+  <%= f.input :description %>
+  <%= f.input :author %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+
 <% @ideas.each do |idea| %>
-<div class="panel panel-default">
-  <div class="panel-body">
-    <blockquote>
-        <p><%= idea.description%></p>
-        <small><%= idea.author%></small>
-    </blockquote>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <blockquote>
+        <p><%= idea.description %></p>
+        <small>by <%= idea.author %></small>
+      </blockquote> 
+    </div>
   </div>
-</div>
 <% end %>
