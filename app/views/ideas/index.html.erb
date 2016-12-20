@@ -35,7 +35,12 @@
       <blockquote>
         <p><%= idea.description %></p>
         <small>by <%= idea.author %></small>
-      </blockquote> 
+      </blockquote>
+      <br>
+      <div class="btn-group" role="group">
+        <%= link_to 'Revise' , edit_ideas_path(idea), class: 'btn btn-success' %>
+        <%= link_to 'Delete', ideas_path(idea), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"} %>
+      </div>
     </div>
   </div>
 <% end %>
